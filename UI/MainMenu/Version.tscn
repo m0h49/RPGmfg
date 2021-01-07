@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://World/GrassBackgraund.png" type="Texture" id=1]
+[ext_resource path="res://UI/MainMenu/Version.gd" type="Script" id=2]
+
+[node name="Version" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 320, 180 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 640, 360 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 620.0
+margin_bottom = 340.0
+custom_constants/separation = 15
+
+[node name="Intro" type="Label" parent="VBoxContainer"]
+margin_right = 600.0
+margin_bottom = 31.0
+text = "RPG My First Game
+version 1.0-alpha"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 46.0
+margin_right = 600.0
+margin_bottom = 128.0
+text = "This is my experiment in mastering Godot Engine. 
+Created based on lessons on the HeartBeast YouTube channel. 
+The game still needs to be finalized, this is the earliest release, 
+not the fact that I will continue to work on it. 
+Thank you very much for downloading and testing."
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 143.0
+margin_right = 600.0
+margin_bottom = 163.0
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 273.0
+margin_right = 327.0
+margin_bottom = 20.0
+action_mode = 0
+text = "Cancel"
