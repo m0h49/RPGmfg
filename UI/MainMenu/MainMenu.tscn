@@ -10,7 +10,6 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=9]
 [ext_resource path="res://World/GrassBackgraund.png" type="Texture" id=10]
-[ext_resource path="res://Shaders/ WhiteColor.shader" type="Shader" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -452,9 +451,11 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 0/z_index = 0
 
+[sub_resource type="Shader" id=52]
+
 [sub_resource type="ShaderMaterial" id=48]
 resource_local_to_scene = true
-shader = ExtResource( 11 )
+shader = SubResource( 52 )
 
 [sub_resource type="Animation" id=49]
 resource_name = "Start"
@@ -583,7 +584,7 @@ scale = Vector2( 3, 3 )
 
 [node name="AnimatedSprite" parent="MarginContainer/HBoxContainer/CenterContainer/Bat" index="0"]
 material = SubResource( 48 )
-frame = 1
+frame = 2
 
 [node name="Bat2" parent="MarginContainer/HBoxContainer/CenterContainer" instance=ExtResource( 1 )]
 position = Vector2( 63, 413 )
@@ -591,6 +592,7 @@ scale = Vector2( 3, 3 )
 
 [node name="AnimatedSprite" parent="MarginContainer/HBoxContainer/CenterContainer/Bat2" index="0"]
 material = SubResource( 48 )
+frame = 1
 
 [node name="AnimationPlayer" parent="MarginContainer/HBoxContainer/CenterContainer/Bat2" index="9"]
 anims/Start = SubResource( 49 )
