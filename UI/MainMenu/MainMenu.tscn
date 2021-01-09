@@ -584,7 +584,7 @@ scale = Vector2( 3, 3 )
 
 [node name="AnimatedSprite" parent="MarginContainer/HBoxContainer/CenterContainer/Bat" index="0"]
 material = SubResource( 48 )
-frame = 2
+frame = 4
 
 [node name="Bat2" parent="MarginContainer/HBoxContainer/CenterContainer" instance=ExtResource( 1 )]
 position = Vector2( 63, 413 )
@@ -592,7 +592,7 @@ scale = Vector2( 3, 3 )
 
 [node name="AnimatedSprite" parent="MarginContainer/HBoxContainer/CenterContainer/Bat2" index="0"]
 material = SubResource( 48 )
-frame = 1
+frame = 3
 
 [node name="AnimationPlayer" parent="MarginContainer/HBoxContainer/CenterContainer/Bat2" index="9"]
 anims/Start = SubResource( 49 )

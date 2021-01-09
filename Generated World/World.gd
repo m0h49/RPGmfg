@@ -15,7 +15,7 @@ var taken_walks = []
 var big_borders = Rect2(1, 1, 38, 21)
 #var small_borders = Rect2(1, 1, 40, 23)
 
-onready var dirtCliffTileMap = $DirtCliffTileMap
+onready var dirtCliffTileMap = $YSort/DirtCliffTileMap
 #onready var dirtPathTileMap = $DirtPathTileMap
 
 func _ready():
