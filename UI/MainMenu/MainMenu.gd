@@ -37,21 +37,18 @@ func _input(_event):
 		match selected_menu:
 			0:
 				# Continue
-				get_tree().change_scene("res://Generated World/World.tscn")
+				get_tree().change_scene("res://Dont Generated World/World.tscn")
 				data_load.load_game()
-				pass
 			1: 
 				# NewGame
-				get_tree().change_scene("res://Generated World/World.tscn")
+				get_tree().change_scene("res://Dont Generated World/World.tscn")
 				data_load.load_game_default()
 			2: 
 				#Options
 				get_tree().change_scene("res://UI/MainMenu/OptionsUI.tscn")
-				pass
 			3:
 				#Version
 				get_tree().change_scene("res://UI/MainMenu/Version.tscn")
-				pass
 
 func change_color():
 	$MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/Continue.modulate = Color.white

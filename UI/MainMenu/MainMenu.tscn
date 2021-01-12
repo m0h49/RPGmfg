@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=2]
@@ -451,46 +451,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 0/z_index = 0
 
-[sub_resource type="Shader" id=52]
+[sub_resource type="Shader" id=48]
 
-[sub_resource type="ShaderMaterial" id=48]
+[sub_resource type="ShaderMaterial" id=49]
 resource_local_to_scene = true
-shader = SubResource( 52 )
+shader = SubResource( 48 )
 
-[sub_resource type="Animation" id=49]
-resource_name = "Start"
-length = 0.2
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:material:shader_param/active")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-
-[sub_resource type="Animation" id=50]
-resource_name = "Stop"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:material:shader_param/active")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=51]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=50]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -583,27 +550,15 @@ position = Vector2( 257, -3 )
 scale = Vector2( 3, 3 )
 
 [node name="AnimatedSprite" parent="MarginContainer/HBoxContainer/CenterContainer/Bat" index="0"]
-material = SubResource( 48 )
+material = SubResource( 49 )
 frame = 4
-
-[node name="Bat2" parent="MarginContainer/HBoxContainer/CenterContainer" instance=ExtResource( 1 )]
-position = Vector2( 63, 413 )
-scale = Vector2( 3, 3 )
-
-[node name="AnimatedSprite" parent="MarginContainer/HBoxContainer/CenterContainer/Bat2" index="0"]
-material = SubResource( 48 )
-frame = 3
-
-[node name="AnimationPlayer" parent="MarginContainer/HBoxContainer/CenterContainer/Bat2" index="9"]
-anims/Start = SubResource( 49 )
-anims/Stop = SubResource( 50 )
 
 [node name="Player" parent="MarginContainer/HBoxContainer/CenterContainer" instance=ExtResource( 8 )]
 position = Vector2( 92, 175 )
 scale = Vector2( 3, 3 )
 
 [node name="AnimationTree" parent="MarginContainer/HBoxContainer/CenterContainer/Player" index="4"]
-parameters/playback = SubResource( 51 )
+parameters/playback = SubResource( 50 )
 
 [node name="Characters" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer"]
 visible = false
@@ -617,7 +572,5 @@ texture = ExtResource( 7 )
 color = Color( 0.313726, 0.313726, 0.313726, 1 )
 
 [editable path="MarginContainer/HBoxContainer/CenterContainer/Bat"]
-
-[editable path="MarginContainer/HBoxContainer/CenterContainer/Bat2"]
 
 [editable path="MarginContainer/HBoxContainer/CenterContainer/Player"]

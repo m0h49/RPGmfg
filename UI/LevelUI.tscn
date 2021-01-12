@@ -3,8 +3,9 @@
 [ext_resource path="res://UI/LevelUI.gd" type="Script" id=1]
 
 [node name="LevelUI" type="Control"]
+margin_top = 17.0
 margin_right = 249.0
-margin_bottom = 50.0
+margin_bottom = 67.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

@@ -23,7 +23,6 @@ func save_game():
 	var save_game = File.new()
 	save_game.open(FILE_NAME, File.WRITE)
 	var player_data = get_data()
-	print(player_data)
 		
 	# Store the save dictionary as a new line in the save file.
 	save_game.store_string(to_json(player_data))

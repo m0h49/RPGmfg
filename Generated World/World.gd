@@ -22,13 +22,14 @@ func _ready():
 	randomize()
 	generate_level()
 	
+	
 func generate_level():
 	var walker = Walker.new(Vector2(1, 11), big_borders) # var walker = Walker.new(Vector2(1, 11), borders)
 	var map = walker.walk(800)
 	
 	var player = Player.instance()
 	get_node("/root/World/YSort").add_child(player) # add_child(player)
-	player.position = Vector2(-8, 360) # player.position = map.front() * 32
+	player.position = Vector2(-8, 350) # player.position = map.front() * 32
 	
 	#-----------------------------------------------------------
 	var cameraRemoute = CameraRemoute.instance()
@@ -54,19 +55,32 @@ func generate_level():
 func reload_level():
 	get_tree().reload_current_scene()
 	
+	
 func add_item(Obj, map, add_tree):
 	var count = map.size()
 	for obj_position in map:
 		if count % (randi() % 500 + 1) == 0 and taken_walks.find(obj_position) == -1:
-			var obj = Obj.instance()
-			get_node(add_tree).add_child(obj)
-			obj.position = obj_position * 32
-			obj.position.x = obj.position.x + 16
-			obj.position.y = obj.position.y + 16
+			
+			
+			if (obj_position.x * 32) < 100:
+				if (obj_position.y * 32) > 400 and (obj_position.y * 32) < 250:
+					obj_istance(Obj, obj_position, add_tree)
+			elif(obj_position.x * 32) > 100:
+				obj_istance(Obj, obj_position, add_tree)
+			
 			taken_walks.append(obj_position)
 		count -= 1
+		
+func obj_istance(Obj, obj_position, add_tree):
+	var obj = Obj.instance()
 	
+	obj.position = obj_position * 32
+	obj.position.x = obj.position.x + 16
+	obj.position.y = obj.position.y + 16
 	
+	get_node(add_tree).add_child(obj)
+	
+
 func _input(event):
 	# Временная кастыль, потом сделать нормальную меню
 	if event.is_action_pressed("ui_cancel"):
