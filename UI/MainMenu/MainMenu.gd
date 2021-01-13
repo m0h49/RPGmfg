@@ -13,11 +13,11 @@ func _ready():
 func _input(_event):
 	if buttonContinue.pressed:
 		buttonContinue.modulate = Color.yellow
-		get_tree().change_scene("res://Generated World/World.tscn")
+		get_tree().change_scene("res://Dont Generated World/World.tscn")
 		data_load.load_game()
 	if buttonNewGame.pressed:
 		buttonNewGame.modulate = Color.yellow
-		get_tree().change_scene("res://Generated World/World.tscn")
+		get_tree().change_scene("res://Dont Generated World/World.tscn")
 		data_load.load_game_default()
 	if buttonOptions.pressed:
 		buttonOptions.modulate = Color.yellow
