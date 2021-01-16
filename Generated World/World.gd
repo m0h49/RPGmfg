@@ -91,3 +91,8 @@ func _input(event):
 	if event.is_action_pressed("ui_page_down"):
 		reload_level()
 		
+func _physics_process(delta):
+	if PlayerStats.health <= 0:
+		if PlayerStats.life <= 0:
+			get_tree().change_scene("res://UI/GameOver/GameOver.tscn")
+			queue_free()

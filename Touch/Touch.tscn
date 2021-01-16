@@ -16,56 +16,63 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Move" type="Position2D" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Move" type="Position2D" parent="CenterContainer"]
 position = Vector2( 5, 5 )
 
-[node name="Up" type="TouchScreenButton" parent="Move"]
+[node name="Up" type="TouchScreenButton" parent="CenterContainer/Move"]
 position = Vector2( 120, 178 )
 rotation = 1.5708
 normal = ExtResource( 2 )
 pressed = ExtResource( 1 )
 action = "ui_up"
 
-[node name="Left" type="TouchScreenButton" parent="Move"]
+[node name="Left" type="TouchScreenButton" parent="CenterContainer/Move"]
 position = Vector2( 10, 228 )
 normal = ExtResource( 2 )
 pressed = ExtResource( 1 )
 action = "ui_left"
 
-[node name="Right" type="TouchScreenButton" parent="Move"]
+[node name="Right" type="TouchScreenButton" parent="CenterContainer/Move"]
 position = Vector2( 170, 289 )
 rotation = -3.14159
 normal = ExtResource( 2 )
 pressed = ExtResource( 1 )
 action = "ui_right"
 
-[node name="Down" type="TouchScreenButton" parent="Move"]
+[node name="Down" type="TouchScreenButton" parent="CenterContainer/Move"]
 position = Vector2( 59, 338 )
 rotation = -1.5708
 normal = ExtResource( 2 )
 pressed = ExtResource( 1 )
 action = "ui_down"
 
-[node name="RollAndAttack" type="Position2D" parent="."]
+[node name="RollAndAttack" type="Position2D" parent="CenterContainer"]
 position = Vector2( -2, 0 )
 
-[node name="Roll" type="TouchScreenButton" parent="RollAndAttack"]
+[node name="Roll" type="TouchScreenButton" parent="CenterContainer/RollAndAttack"]
 position = Vector2( 560, 192 )
 scale = Vector2( 0.4, 0.4 )
 normal = ExtResource( 3 )
 pressed = ExtResource( 5 )
 action = "ui_focus_next"
 
-[node name="Attack" type="TouchScreenButton" parent="RollAndAttack"]
+[node name="Attack" type="TouchScreenButton" parent="CenterContainer/RollAndAttack"]
 position = Vector2( 500, 260 )
 scale = Vector2( 0.5, 0.5 )
 normal = ExtResource( 3 )
 pressed = ExtResource( 5 )
 action = "ui_select"
 
-[node name="Menu" type="Position2D" parent="."]
+[node name="Menu" type="Position2D" parent="CenterContainer"]
 
-[node name="Menu" type="TouchScreenButton" parent="Menu"]
+[node name="Menu" type="TouchScreenButton" parent="CenterContainer/Menu"]
 position = Vector2( 296, 0 )
 normal = ExtResource( 6 )
 pressed = ExtResource( 4 )
