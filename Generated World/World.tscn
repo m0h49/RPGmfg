@@ -633,7 +633,7 @@ format = 1
 position = Vector2( 640, 352 )
 
 [node name="BottomRight" parent="Camera2D/Limits" index="1"]
-position = Vector2( 1312, 768 )
+position = Vector2( 1312, 744 )
 
 [node name="YSort" type="YSort" parent="."]
 
