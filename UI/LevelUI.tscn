@@ -61,7 +61,6 @@ align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
-<<<<<<< HEAD
 
 [node name="FPSUI" type="Label" parent="."]
 visible = false
@@ -84,5 +83,3 @@ align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
-=======
->>>>>>> 26e79be9d32a1b1459404f8f7bdec9fbae2a3e7d

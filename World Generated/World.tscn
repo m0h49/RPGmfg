@@ -740,14 +740,19 @@ __meta__ = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HelthUI" parent="CanvasLayer" instance=ExtResource( 4 )]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 68.0
+margin_bottom = 19.0
 
 [node name="LevelUI" parent="CanvasLayer" instance=ExtResource( 1 )]
+margin_left = 8.0
+margin_top = 24.0
+margin_right = 257.0
+margin_bottom = 74.0
 
 [node name="PopupMenu" parent="CanvasLayer" instance=ExtResource( 11 )]
 
 [node name="Touch" parent="CanvasLayer" instance=ExtResource( 3 )]
-
-[node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 350, 100 )
 
 [editable path="Camera2D"]

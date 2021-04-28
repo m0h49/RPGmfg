@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 [gd_scene load_steps=5 format=2]
-=======
-[gd_scene load_steps=4 format=2]
->>>>>>> 26e79be9d32a1b1459404f8f7bdec9fbae2a3e7d
 
 [ext_resource path="res://UI/GameOver/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
 
-<<<<<<< HEAD
 [sub_resource type="DynamicFont" id=2]
 size = 35
 outline_size = 2
@@ -18,11 +13,6 @@ font_data = ExtResource( 2 )
 size = 12
 outline_size = 2
 outline_color = Color( 0.203922, 0.203922, 0.203922, 1 )
-=======
-[sub_resource type="DynamicFont" id=1]
-outline_size = 2
-outline_color = Color( 1, 0, 0, 1 )
->>>>>>> 26e79be9d32a1b1459404f8f7bdec9fbae2a3e7d
 font_data = ExtResource( 2 )
 
 [node name="GameOver" type="Control"]
@@ -61,7 +51,6 @@ margin_right = 620.0
 margin_bottom = 340.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
-<<<<<<< HEAD
 margin_left = 142.0
 margin_top = 117.0
 margin_right = 457.0
@@ -86,41 +75,6 @@ margin_bottom = 51.0
 margin_top = 67.0
 margin_right = 315.0
 margin_bottom = 85.0
-=======
-margin_left = 102.0
-margin_top = 147.0
-margin_right = 498.0
-margin_bottom = 173.0
-alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
-margin_right = 396.0
-alignment = 1
-
-[node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
-visible = false
-margin_left = 6.0
-margin_right = 157.0
-margin_bottom = 14.0
-text = "You have reached level:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="EndLevel" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
-visible = false
-margin_left = 84.0
-margin_right = 84.0
-margin_bottom = 14.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer"]
-margin_top = 4.0
-margin_right = 396.0
-margin_bottom = 26.0
->>>>>>> 26e79be9d32a1b1459404f8f7bdec9fbae2a3e7d
 custom_fonts/font = SubResource( 1 )
 text = "Click to the return menu"
 flat = true

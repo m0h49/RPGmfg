@@ -37,11 +37,7 @@ func _physics_process(delta):
 	match state:
 		MOVE:
 			move_state(delta)
-<<<<<<< HEAD:Player/Player.gd
 
-=======
-			
->>>>>>> 26e79be9d32a1b1459404f8f7bdec9fbae2a3e7d:Action RPG/Player/Player.gd
 		ROLL:
 			roll_state()
 			
@@ -66,23 +62,17 @@ func move_state(delta):
 	else:
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-<<<<<<< HEAD:Player/Player.gd
 
 
 	move()
 
 
-=======
-		
-	move()
-		
->>>>>>> 26e79be9d32a1b1459404f8f7bdec9fbae2a3e7d:Action RPG/Player/Player.gd
 	if Input.is_action_just_pressed("ui_focus_next"):
 		state = ROLL
 	
 	if Input.is_action_just_pressed("ui_select"):
 		state = ATTACK
-		
+
 func roll_state():
 	velocity = roll_vector * ROLL_SPEED
 	animationState.travel("Roll")

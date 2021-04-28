@@ -56,17 +56,10 @@ radius = 90.0
 
 [sub_resource type="CircleShape2D" id=11]
 radius = 4.0
-<<<<<<< HEAD:Enemies/Bat.tscn
 
 [sub_resource type="CircleShape2D" id=12]
 radius = 5.09902
 
-=======
-
-[sub_resource type="CircleShape2D" id=12]
-radius = 5.09902
-
->>>>>>> 26e79be9d32a1b1459404f8f7bdec9fbae2a3e7d:Action RPG/Enemies/Bat.tscn
 [sub_resource type="Animation" id=13]
 resource_name = "Start"
 length = 0.2
@@ -109,11 +102,7 @@ light_mask = 2
 material = SubResource( 1 )
 frames = SubResource( 7 )
 animation = "Fly"
-<<<<<<< HEAD:Enemies/Bat.tscn
 frame = 1
-=======
-frame = 2
->>>>>>> 26e79be9d32a1b1459404f8f7bdec9fbae2a3e7d:Action RPG/Enemies/Bat.tscn
 playing = true
 offset = Vector2( 0, -12 )
 
@@ -160,10 +149,7 @@ shape = SubResource( 12 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Start = SubResource( 13 )
 anims/Stop = SubResource( 14 )
-<<<<<<< HEAD:Enemies/Bat.tscn
 
-=======
->>>>>>> 26e79be9d32a1b1459404f8f7bdec9fbae2a3e7d:Action RPG/Enemies/Bat.tscn
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_ended"]
 [connection signal="invincibility_started" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_started"]
