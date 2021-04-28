@@ -19,8 +19,12 @@ func _init(startiong_position, new_borders):
 func walk(steps):
 	place_room(position)
 	for step in steps:
+<<<<<<< HEAD
 #		if steps_since_turn >= 6: # <=== randf() <= 0.25 and/or steps_since_turn >= 6:
 		if randf() <= 0.25 and steps_since_turn >= 6:
+=======
+		if steps_since_turn >= 6: # <=== randf() <= 0.25 and/or steps_since_turn >= 6:
+>>>>>>> 26e79be9d32a1b1459404f8f7bdec9fbae2a3e7d
 			change_direction()
 		
 		if step():

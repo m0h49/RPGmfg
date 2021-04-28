@@ -28,7 +28,11 @@ _global_script_class_icons={
 
 config/name="RPGmfg"
 run/main_scene="res://UI/MainMenu/MainMenu.tscn"
+<<<<<<< HEAD
 config/icon="res://main_icon.png"
+=======
+config/icon="res://icon.png"
+>>>>>>> 26e79be9d32a1b1459404f8f7bdec9fbae2a3e7d
 
 [autoload]
 
@@ -67,6 +71,7 @@ texture={
 "svg/scale": 1.0
 }
 
+<<<<<<< HEAD
 [input]
 
 lbm_click={
@@ -75,6 +80,8 @@ lbm_click={
  ]
 }
 
+=======
+>>>>>>> 26e79be9d32a1b1459404f8f7bdec9fbae2a3e7d
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
