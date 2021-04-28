@@ -9,7 +9,7 @@
 [ext_resource path="res://Music and Sounds/Swipe.wav" type="AudioStream" id=7]
 [ext_resource path="res://Music and Sounds/Evade.wav" type="AudioStream" id=8]
 [ext_resource path="res://Shaders/WhiteColor.shader" type="Shader" id=9]
-[ext_resource path="res://Player/light.png" type="Texture" id=10]
+[ext_resource path="res://Music and Sounds/Music.mp3" type="AudioStream" id=10]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 9 )
@@ -17,7 +17,7 @@ shader_param/active = false
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 4.0
-height = 2.0
+height = 7.0
 
 [sub_resource type="Animation" id=3]
 length = 0.4
@@ -766,10 +766,9 @@ material = SubResource( 1 )
 position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
 hframes = 60
-frame = 36
+frame = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 rotation = -1.57079
 shape = SubResource( 2 )
 
@@ -833,14 +832,13 @@ stream = ExtResource( 7 )
 anims/Start = SubResource( 49 )
 anims/Stop = SubResource( 50 )
 
-[node name="Light2D" type="Light2D" parent="."]
-texture = ExtResource( 10 )
-range_item_cull_mask = 3
-shadow_enabled = true
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_ended"]
 [connection signal="invincibility_started" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_started"]
 
 [editable path="HitboxPivot/Hitbox"]
-
 [editable path="Hurtbox"]

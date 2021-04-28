@@ -7,6 +7,11 @@ var level = 1 setget set_level
 onready var xpUIFull = $XPUIFull
 onready var xpUIEmpty = $XPUIEmpty
 onready var levelUI = $LevelUI/Label
+onready var fps_label = $FPSUI/Label
+
+func _process(_delta: float) -> void:
+	$FPSUI.visible = Global.fps_output
+	fps_label.set_text(str(Engine.get_frames_per_second()))
 
 func set_xp(value):
 	xp = clamp(value, 0, max_xp)

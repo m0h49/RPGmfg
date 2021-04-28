@@ -28,11 +28,12 @@ _global_script_class_icons={
 
 config/name="RPGmfg"
 run/main_scene="res://UI/MainMenu/MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://main_icon.png"
 
 [autoload]
 
 PlayerStats="*res://Player/PlayerStats.tscn"
+Global="*res://Global/Global.gd"
 
 [display]
 
@@ -64,6 +65,14 @@ texture={
 "size_limit": 0,
 "stream": false,
 "svg/scale": 1.0
+}
+
+[input]
+
+lbm_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
 }
 
 [input_devices]

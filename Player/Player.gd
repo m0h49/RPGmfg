@@ -33,10 +33,11 @@ func _ready():
 	swordHitbox.knockback_vector = roll_vector
 
 func _physics_process(delta):
+	
 	match state:
 		MOVE:
 			move_state(delta)
-			
+
 		ROLL:
 			roll_state()
 			
@@ -61,15 +62,17 @@ func move_state(delta):
 	else:
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-		
+
+
 	move()
-		
+
+
 	if Input.is_action_just_pressed("ui_focus_next"):
 		state = ROLL
 	
 	if Input.is_action_just_pressed("ui_select"):
 		state = ATTACK
-		
+
 func roll_state():
 	velocity = roll_vector * ROLL_SPEED
 	animationState.travel("Roll")

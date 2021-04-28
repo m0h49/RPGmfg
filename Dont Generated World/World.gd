@@ -1,19 +1,21 @@
 extends Node2D
 
-const Bat = preload("res://Enemies/Bat.tscn")
+const Player = preload("res://Player/Player.tscn")
+const CameraRemoute = preload("res://Camera/Remote.tscn")
 
 var data_player = LoadSave.new()
 		
 func _ready():
-	$ExitDoor.connect("leaving_level", self, "reload_level")
+	var _err = $ExitDoor1.connect("leaving_level", self, "next_level")
+	_err = $ExitDoor2.connect("leaving_level", self, "next_level")
 	
-func _input(event):
-	# Временная кастыль, потом сделать нормальную меню
-	if event.is_action_pressed("ui_cancel"):
-		data_player.save_game()
-		get_tree().change_scene("res://UI/MainMenu/MainMenu.tscn")
-		queue_free()
-		
+	var player = Player.instance()
+	get_node("/root/World/YSort").add_child(player) # add_child(player)
+	player.position = Global.position_spawn # Vector2(-224, 16)
+	
+	
+	var cameraRemoute = CameraRemoute.instance()
+	get_node("/root/World/YSort/Player").add_child(cameraRemoute)
 
-func reload_level():
-	get_tree().change_scene("res://Generated World/World.tscn")
+func next_level():
+	var _err = get_tree().change_scene("res://Generated World/World.tscn")

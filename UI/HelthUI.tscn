@@ -33,7 +33,7 @@ __meta__ = {
 
 [node name="LifeUIEmpty" type="ColorRect" parent="."]
 margin_top = 12.0
-margin_right = 102.0
+margin_right = 100.0
 margin_bottom = 16.0
 color = Color( 0, 0, 0, 0.498039 )
 __meta__ = {
@@ -41,9 +41,8 @@ __meta__ = {
 }
 
 [node name="LifeUIFull" type="ColorRect" parent="."]
-margin_left = 1.0
 margin_top = 13.0
-margin_right = 101.0
+margin_right = 100.0
 margin_bottom = 15.0
 color = Color( 1, 0, 0, 1 )
 __meta__ = {

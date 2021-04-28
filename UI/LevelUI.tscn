@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/LevelUI.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 7
+outline_size = 1
+outline_color = Color( 0, 0, 0, 0.784314 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 7
+outline_size = 1
+outline_color = Color( 0, 0, 0, 0.784314 )
+font_data = ExtResource( 2 )
 
 [node name="LevelUI" type="Control"]
 margin_top = 17.0
@@ -12,7 +25,7 @@ __meta__ = {
 }
 
 [node name="XPUIEmpty" type="ColorRect" parent="."]
-margin_right = 102.0
+margin_right = 100.0
 margin_bottom = 4.0
 color = Color( 0, 0, 0, 0.498039 )
 __meta__ = {
@@ -20,9 +33,8 @@ __meta__ = {
 }
 
 [node name="XPUIFull" type="ColorRect" parent="."]
-margin_left = 1.0
 margin_top = 1.0
-margin_right = 101.0
+margin_right = 100.0
 margin_bottom = 3.0
 color = Color( 0, 0, 1, 1 )
 __meta__ = {
@@ -30,18 +42,42 @@ __meta__ = {
 }
 
 [node name="LevelUI" type="Label" parent="."]
-margin_top = 4.0
-margin_right = 40.0
-margin_bottom = 18.0
+margin_top = 7.0
+margin_right = 42.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 1 )
 text = "Level:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="LevelUI"]
-margin_left = 38.0
-margin_right = 101.0
+margin_left = 40.0
+margin_right = 103.0
 margin_bottom = 14.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FPSUI" type="Label" parent="."]
+visible = false
+margin_top = 21.0
+margin_right = 42.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 1 )
+text = "FPS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="FPSUI"]
+margin_left = 40.0
+margin_right = 103.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
 __meta__ = {

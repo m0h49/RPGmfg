@@ -29,7 +29,7 @@ func generate_level():
 	
 	var player = Player.instance()
 	get_node("/root/World/YSort").add_child(player) # add_child(player)
-	player.position = Vector2(-8, 350) # player.position = map.front() * 32
+	player.position = Global.position_spawn #Vector2(-8, 350) # player.position = map.front() * 32
 	
 	#-----------------------------------------------------------
 	var cameraRemoute = CameraRemoute.instance()
@@ -39,7 +39,8 @@ func generate_level():
 	#add_child(exit)
 	#exit.position = walker.get_end_room().position * 32
 	#exit.connect("leaving_level", self, "reload_level")
-	$ExitDoor.connect("leaving_level", self, "reload_level")
+	var _err = $ExitDoor1.connect("leaving_level", self, "back_level")
+	_err = $ExitDoor2.connect("leaving_level", self, "back_level")
 	
 	add_item(Bat, map, "/root/World/YSort")
 	add_item(Bush, map, "/root/World/YSort/Bushes")
@@ -53,7 +54,10 @@ func generate_level():
 	dirtCliffTileMap.update_bitmask_region(big_borders.position, big_borders.end)
 		
 func reload_level():
-	get_tree().reload_current_scene()
+	var _err = get_tree().reload_current_scene()
+	
+func back_level():
+	var _err = get_tree().change_scene("res://Dont Generated World/World.tscn")
 	
 	
 func add_item(Obj, map, add_tree):
@@ -85,14 +89,14 @@ func _input(event):
 	# Временная кастыль, потом сделать нормальную меню
 	if event.is_action_pressed("ui_cancel"):
 		data_player.save_game()
-		get_tree().change_scene("res://UI/MainMenu/MainMenu.tscn")
+		var _err = get_tree().change_scene("res://UI/MainMenu/MainMenu.tscn")
 		queue_free()
 		
 	if event.is_action_pressed("ui_page_down"):
 		reload_level()
 		
-func _physics_process(delta):
+func _physics_process(_delta):
 	if PlayerStats.health <= 0:
 		if PlayerStats.life <= 0:
-			get_tree().change_scene("res://UI/GameOver/GameOver.tscn")
+			var _err = get_tree().change_scene("res://UI/GameOver/GameOver.tscn")
 			queue_free()

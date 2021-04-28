@@ -1,12 +1,8 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=2]
-[ext_resource path="res://Assets/title.png" type="Texture" id=3]
-[ext_resource path="res://Assets/label_options.png" type="Texture" id=4]
-[ext_resource path="res://Assets/label_new_game.png" type="Texture" id=5]
-[ext_resource path="res://Assets/label_continue.png" type="Texture" id=6]
-[ext_resource path="res://Assets/characters.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=9]
 [ext_resource path="res://World/GrassBackgraund.png" type="Texture" id=10]
@@ -451,13 +447,22 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 0/z_index = 0
 
-[sub_resource type="Shader" id=48]
+[sub_resource type="DynamicFont" id=48]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 0.588235 )
+font_data = ExtResource( 4 )
 
-[sub_resource type="ShaderMaterial" id=49]
-resource_local_to_scene = true
-shader = SubResource( 48 )
+[sub_resource type="DynamicFont" id=49]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 0.588235 )
+font_data = ExtResource( 4 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=50]
+[sub_resource type="DynamicFont" id=50]
+size = 10
+outline_size = 2
+outline_color = Color( 0, 0, 0, 0.588235 )
+font_data = ExtResource( 4 )
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -478,7 +483,7 @@ position = Vector2( 293, 20 )
 tile_set = SubResource( 47 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 131071, 0, 4, 65536, 0, 196609, 65537, 0, 196609, 65538, 0, 196609, 65539, 0, 196609, 65540, 0, 7, 196607, 0, 65539, 131076, 0, 196612, 131077, 0, 196609, 131078, 0, 196609, 131079, 0, 196609, 131080, 0, 7, 262143, 0, 65539, 196616, 0, 65539, 327678, 0, 4, 327679, 0, 196615, 262152, 0, 65539, 393214, 0, 65539, 327688, 0, 65539, 458750, 0, 65539, 393222, 0, 4, 393223, 0, 196609, 393224, 0, 196615, 524286, 0, 65539, 458758, 0, 65539, 589822, 0, 196612, 589823, 0, 196609, 524288, 0, 196609, 524289, 0, 196609, 524290, 0, 196609, 524291, 0, 196609, 524292, 0, 196609, 524293, 0, 196609, 524294, 0, 196615 )
+tile_data = PoolIntArray( 196607, 0, 0, 131072, 0, 1, 131073, 0, 1, 131074, 0, 1, 131075, 0, 1, 131076, 0, 1, 131077, 0, 1, 131078, 0, 1, 131079, 0, 1, 131080, 0, 2, 262143, 0, 65536, 196608, 0, 65541, 196609, 0, 131073, 196610, 0, 131073, 196611, 0, 131073, 196612, 0, 131073, 196613, 0, 131073, 196614, 0, 131073, 196615, 0, 65542, 196616, 0, 65538, 327679, 0, 65536, 262144, 0, 65538, 262151, 0, 65536, 262152, 0, 65538, 393215, 0, 65536, 327680, 0, 65538, 327687, 0, 131072, 327688, 0, 9, 327689, 0, 2, 458751, 0, 65536, 393216, 0, 65538, 393224, 0, 65536, 393225, 0, 65538, 524287, 0, 65536, 458752, 0, 65538, 458760, 0, 65536, 458761, 0, 65538, 589823, 0, 65536, 524288, 0, 131077, 524289, 0, 1, 524290, 0, 1, 524291, 0, 1, 524292, 0, 1, 524293, 0, 1, 524294, 0, 1, 524295, 0, 1, 524296, 0, 131078, 524297, 0, 65538, 655359, 0, 131072, 589824, 0, 131073, 589825, 0, 131073, 589826, 0, 131073, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131073, 589830, 0, 131073, 589831, 0, 131073, 589832, 0, 131073, 589833, 0, 131074 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -498,79 +503,89 @@ margin_right = 620.0
 margin_bottom = 340.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-margin_right = 269.0
+margin_right = 302.0
 margin_bottom = 320.0
 
-[node name="Logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_right = 269.0
-margin_bottom = 65.0
-texture = ExtResource( 3 )
+[node name="Logo" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 302.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 48 )
+text = "Raihand"
 
-[node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 69.0
-margin_right = 269.0
-margin_bottom = 285.0
+[node name="Menu" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 34.0
+margin_right = 302.0
+margin_bottom = 300.0
 size_flags_vertical = 3
 custom_constants/separation = 10
 alignment = 1
 
-[node name="Continue" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
-margin_top = 68.0
-margin_right = 269.0
-margin_bottom = 86.0
-texture_normal = ExtResource( 6 )
+[node name="LoadGame" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu"]
+margin_top = 90.0
+margin_right = 302.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 49 )
+custom_colors/font_color_disabled = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 0, 1 )
+text = "Continue"
+flat = true
+align = 0
 
-[node name="NewGame" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
-margin_top = 96.0
-margin_right = 269.0
-margin_bottom = 114.0
-texture_normal = ExtResource( 5 )
+[node name="NewGame" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu"]
+margin_top = 122.0
+margin_right = 302.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 49 )
+custom_colors/font_color_disabled = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 0, 1 )
+text = "NewGame"
+flat = true
+align = 0
 
-[node name="Options" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
-margin_top = 124.0
-margin_right = 269.0
-margin_bottom = 147.0
-texture_normal = ExtResource( 4 )
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu"]
+margin_top = 154.0
+margin_right = 302.0
+margin_bottom = 176.0
+custom_fonts/font = SubResource( 49 )
+custom_colors/font_color_disabled = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 0, 1 )
+text = "Quit"
+flat = true
+align = 0
 
-[node name="Version" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 289.0
-margin_right = 269.0
+[node name="Version" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 304.0
+margin_right = 302.0
 margin_bottom = 320.0
-text = "Ver. 1.0 - alpha
-Godot Engine"
+custom_fonts/font = SubResource( 50 )
+text = "Ver. 1.0 - alpha Godot Engine"
+flat = true
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
-margin_left = 273.0
-margin_right = 273.0
+margin_left = 306.0
+margin_right = 306.0
 margin_bottom = 320.0
 size_flags_vertical = 3
 
-[node name="Bat" parent="MarginContainer/HBoxContainer/CenterContainer" instance=ExtResource( 1 )]
-position = Vector2( 257, -3 )
+[node name="Bat1" parent="MarginContainer/HBoxContainer/CenterContainer" instance=ExtResource( 1 )]
+position = Vector2( 107.069, -10.5595 )
 scale = Vector2( 3, 3 )
 
-[node name="AnimatedSprite" parent="MarginContainer/HBoxContainer/CenterContainer/Bat" index="0"]
-material = SubResource( 49 )
-frame = 2
+[node name="Bat2" parent="MarginContainer/HBoxContainer/CenterContainer" instance=ExtResource( 1 )]
+position = Vector2( 327.825, 108.015 )
+scale = Vector2( 3, 3 )
 
 [node name="Player" parent="MarginContainer/HBoxContainer/CenterContainer" instance=ExtResource( 8 )]
 position = Vector2( 92, 175 )
 scale = Vector2( 3, 3 )
 
-[node name="AnimationTree" parent="MarginContainer/HBoxContainer/CenterContainer/Player" index="4"]
-parameters/playback = SubResource( 50 )
-
-[node name="Characters" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer"]
-visible = false
-margin_left = -134.0
-margin_top = 75.0
-margin_right = 133.0
-margin_bottom = 245.0
-texture = ExtResource( 7 )
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.313726, 0.313726, 0.313726, 1 )
-
-[editable path="MarginContainer/HBoxContainer/CenterContainer/Bat"]
-
-[editable path="MarginContainer/HBoxContainer/CenterContainer/Player"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Menu/LoadGame" to="." method="_on_LoadGame_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Menu/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Menu/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Version" to="." method="_on_Version_pressed"]
