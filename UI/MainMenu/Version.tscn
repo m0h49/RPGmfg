@@ -43,12 +43,12 @@ region_rect = Rect2( 0, 0, 640, 360 )
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 10.0
 margin_top = 20.0
-margin_right = 634.0
+margin_right = 630.0
 margin_bottom = 350.0
 custom_constants/separation = 15
 
 [node name="Intro" type="Label" parent="VBoxContainer"]
-margin_right = 624.0
+margin_right = 620.0
 margin_bottom = 35.0
 custom_fonts/font = SubResource( 1 )
 text = "RPG My First Game
@@ -58,27 +58,35 @@ valign = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_top = 50.0
-margin_right = 624.0
-margin_bottom = 152.0
+margin_right = 620.0
+margin_bottom = 272.0
 custom_fonts/font = SubResource( 2 )
-text = "This is my experiment in mastering the Godot Engine.
-An unfinished project with a bunch of 
-crutches and bugs.
+text = "This is my unfinished project on 
+mastering Godot Enginet with crutches and bugs
 I am still just learning to program.
-Created on the basis of training materials 
-from the YouTube channel HeartBeast and others.
-Thanks so much for downloading and testing."
+I want to thank the people whose resources I used:
+this is Davide Pesce, on whose website
+davidepesce.com I read the Godot Tutorials.
+Benjamin, host of the YouTube channel HeartBeast.
+Michael William, author of
+delta12studio.blogspot.com
+blog and Lango's game at delta12-studio.itch.io.
+And others.
+
+
+Thank you for downloading and playing!
+"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 167.0
-margin_right = 624.0
-margin_bottom = 189.0
+margin_top = 287.0
+margin_right = 620.0
+margin_bottom = 309.0
 alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 258.0
-margin_right = 366.0
+margin_left = 256.0
+margin_right = 364.0
 margin_bottom = 22.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_disabled = Color( 1, 0, 0, 1 )

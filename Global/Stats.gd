@@ -59,14 +59,11 @@ func set_level(value):
 		if max_health > health:
 			health += 1
 			emit_signal("health_changed", health)
-			print("health +1")
 		elif max_health <= health:
 			max_health += 1
 			health += 1
 			emit_signal("max_health_changed", health)
 			emit_signal("health_changed", max_health)
-			print("max health +1")
-			print("health +1")
 		count_level_up = 0
 	if level == 1 and count_level_up > 1:
 		count_level_up = 1

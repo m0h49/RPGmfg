@@ -20,3 +20,17 @@ func next_level():
 	var _err = get_tree().change_scene("res://World Generated/World.tscn")
 func next_level_water():
 	var _err = get_tree().change_scene("res://World Exp/World.tscn")
+
+
+func _on_OpenEntranc1_area_exited(_area: Area2D) -> void:
+	$YSort/DirtCliffTileMap.set_cellv(Vector2(6, 15), -1)
+	$YSort/DirtCliffTileMap.set_cellv(Vector2(7, 15), -1)
+	$YSort/DirtCliffTileMap.set_cellv(Vector2(6, 16), -1)
+	$YSort/DirtCliffTileMap.set_cellv(Vector2(7, 16), -1)
+	$YSort/DirtCliffTileMap.update_bitmask_region(Vector2(6, 15), Vector2(7, 16))
+
+func _on_OpenEntranc2_area_exited(_area: Area2D) -> void:
+	$YSort/DirtCliffTileMap.set_cellv(Vector2(12, -3), -1)
+	$YSort/DirtCliffTileMap.set_cellv(Vector2(12, -2), -1)
+	$YSort/DirtCliffTileMap.update_bitmask_region(Vector2(12, -3), Vector2(12, -2))
+	
