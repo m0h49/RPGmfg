@@ -625,6 +625,7 @@ code = "shader_type canvas_item;
 
 uniform vec3 color = vec3(0.35, 0.48, 0.95);
 uniform int OCTAVES = 4;
+uniform float intensive = 0.5;
 
 float rand(vec2 coord){
 	return fract(sin(dot(coord, vec2(56, 78)) * 1000.0) * 1000.0);
@@ -664,13 +665,14 @@ void fragment() {
 
 	float final = fbm(coord + motion);
 
-	COLOR = vec4(color, final * 0.5);
+	COLOR = vec4(color, final * intensive);
 }"
 
 [sub_resource type="ShaderMaterial" id=96]
 shader = SubResource( 95 )
 shader_param/color = Vector3( 1, 1, 1 )
 shader_param/OCTAVES = 4
+shader_param/intensive = 0.3
 
 [node name="World" type="Node2D"]
 script = ExtResource( 7 )
@@ -734,7 +736,7 @@ margin_top = 0.0799999
 margin_right = 3.83997
 margin_bottom = -0.160004
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

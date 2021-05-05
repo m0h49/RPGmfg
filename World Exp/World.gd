@@ -12,8 +12,8 @@ func _ready() -> void:
 	#player.position = Vector2(150, 50)
 	
 	# testing
-	$YSort/DirtCliffTileMap.set_cellv(Vector2(5, 5), 0)
-	$YSort/DirtCliffTileMap.update_bitmask_region(Vector2(0,0), Vector2(34,34))
+	$YSort/DirtCliffTileMap.set_cellv(Vector2(7, 7), 0)
+	$YSort/DirtCliffTileMap.update_bitmask_region(Vector2(7,7), Vector2(7,7))
 	
 	var cameraRemoute = CameraRemoute.instance()
 	get_node("/root/World/YSort/Player").add_child(cameraRemoute)

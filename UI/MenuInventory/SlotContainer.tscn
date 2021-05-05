@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/MenuInventory/SlotContainer.gd" type="Script" id=2]
+[ext_resource path="res://UI/MenuInventory/ItemUI.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+bg_color = Color( 0.470588, 0.470588, 0.470588, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_color = Color( 0, 0, 0, 0.831373 )
+shadow_size = 2
+shadow_offset = Vector2( 2, 2 )
+
+[node name="SlotContainer" type="PanelContainer"]
+margin_right = 54.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 54, 54 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Num" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 52.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 50, 50 )
+align = 1
+valign = 1
+
+[node name="ItemUI" parent="." instance=ExtResource( 3 )]
