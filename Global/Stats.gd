@@ -53,7 +53,7 @@ func set_xp(value):
 func set_level(value):
 	level = value
 	emit_signal("level_changed", level)
-	# Мой кастыль который добавляет health/maz_halth после каждого пятого уровня
+	# Мой кастыль который добавляет health/max_halth после каждого пятого уровня
 	count_level_up += 1
 	if count_level_up == 5 :
 		if max_health > health:

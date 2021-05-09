@@ -1,0 +1,137 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://addons/quentincaffeino-console/src/Console.gd" type="Script" id=1]
+[ext_resource path="res://addons/quentincaffeino-console/src/ConsoleLine.gd" type="Script" id=6]
+[ext_resource path="res://addons/quentincaffeino-console/assets/fonts/source-code-pro/TTF/m5x7.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.121569, 0.121569, 0.121569, 0.784314 )
+shadow_color = Color( 0, 0, 0, 0.666667 )
+shadow_size = 5
+shadow_offset = Vector2( 5, 5 )
+
+[sub_resource type="Animation" id=1]
+length = 0.25
+step = 0.05
+tracks/0/type = "method"
+tracks/0/path = NodePath("Container/ConsoleLine")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "clear"
+}, {
+"args": [  ],
+"method": "clear"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.129412, 0.129412, 0.129412, 0.588235 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 7 )
+
+[node name="Console" type="CanvasLayer"]
+pause_mode = 2
+layer = 128
+script = ExtResource( 1 )
+
+[node name="ConsoleBox" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.705882 )
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.349889
+margin_bottom = 0.0399933
+mouse_filter = 2
+custom_styles/panel = SubResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ConsoleBox"]
+anims/fade = SubResource( 1 )
+
+[node name="Container" type="VBoxContainer" parent="ConsoleBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConsoleText" type="RichTextLabel" parent="ConsoleBox/Container"]
+margin_right = 576.0
+margin_bottom = 107.0
+focus_neighbour_left = NodePath("../LineEdit")
+focus_neighbour_top = NodePath("../LineEdit")
+focus_neighbour_right = NodePath("../LineEdit")
+focus_neighbour_bottom = NodePath("../LineEdit")
+focus_next = NodePath("../LineEdit")
+focus_previous = NodePath("../LineEdit")
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 3 )
+custom_fonts/bold_italics_font = SubResource( 4 )
+custom_fonts/italics_font = SubResource( 5 )
+custom_fonts/bold_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
+bbcode_enabled = true
+scroll_following = true
+selection_enabled = true
+
+[node name="ConsoleLine" type="LineEdit" parent="ConsoleBox/Container"]
+margin_top = 111.0
+margin_right = 576.0
+margin_bottom = 126.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+size_flags_horizontal = 3
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+caret_blink = true
+script = ExtResource( 6 )
+_sections_unfolded = [ "Anchor", "Caret", "Grow Direction", "Margin", "Material", "Pause", "Placeholder", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]

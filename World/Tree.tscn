@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 6.0
-height = 1.99999
+height = 6.99743
 
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -12, 1, -8, 5, 0, 8, 8, 5, 12, 1, 8, -3, 0, -6, -8, -3 )

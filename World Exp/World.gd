@@ -17,6 +17,11 @@ func _ready() -> void:
 	
 	var cameraRemoute = CameraRemoute.instance()
 	get_node("/root/World/YSort/Player").add_child(cameraRemoute)
+	
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("lbm_click"):
+		print(PlayerStats.max_health, ", ", PlayerStats.health)
+		
 func next_level():
 	var _err = get_tree().change_scene("res://World Dont Generated/World.tscn")
