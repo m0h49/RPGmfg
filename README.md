@@ -1,4 +1,4 @@
-# RPGmfg
+# RaihandRPG
 
 The game was created based on the lessons of HeartBeast:
 https://m.youtube.com/user/uheartbeast
